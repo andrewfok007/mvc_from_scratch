@@ -2,6 +2,7 @@
 
 // Check if enviroment is development and display errors
 function setReporting(){
+	
 	if(DEVELOPMENT_ENVIROMENT == true){
 		error_reporting(E_ALL);
 		ini_set('display_errors', 'On');
@@ -33,7 +34,7 @@ function unregisterGlobals(){
 	if(ini_get('register_globals')){
 		$array = array('_SESSION', '_POST', '_GET', '_COOKIE', '_REQUEST', '_SERVER', '_ENV', '_FILES');
 		foreach ($array as $value) {
-			foreach ($$GLOBALS[$value] as $key => $val) {
+			foreach ($GLOBALS[$value] as $key => $val) {
 				if($var === $GLOBALS[$key]){
 					unset($GLOBALS[$key]);
 				}
@@ -43,6 +44,7 @@ function unregisterGlobals(){
 }
 
 function callHook(){
+
 	global $url; // e.g. todo.com/items/view/1/first-item
 
 	$urlArray = array();

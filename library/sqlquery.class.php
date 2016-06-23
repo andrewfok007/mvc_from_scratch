@@ -8,7 +8,7 @@ class SQLQuery {
     /** Connects to database **/
 
     function connect($address, $account, $pwd, $name) {
-        $this->_dbHandle = mysql_connect($address, $account, $pwd);
+        $this->_dbHandle = @mysql_connect($address, $account, $pwd);
         
         if ($this->_dbHandle != 0) {
             if (mysql_select_db($name, $this->_dbHandle)) {

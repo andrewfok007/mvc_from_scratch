@@ -1,3 +1,5 @@
+<h3><?php echo $title; ?></h3>
+<hr>
 <form action="../items/add" method="post">
 <input type="text" value="I have to..." onclick="this.value=''" name="todo"> <input type="submit" value="add">
 </form>
